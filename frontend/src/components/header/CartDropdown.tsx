@@ -1,5 +1,8 @@
 import React from 'react';
 import { FaOpencart } from 'react-icons/fa';
+import product1 from '../../assets/product01.png';
+import product2 from '../../assets/product02.png';
+import { RxCross2 } from "react-icons/rx";
 
 interface CartDropdownProps {
   isOpen: boolean;
@@ -18,24 +21,24 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen, toggleCart }) => {
         <div className="cart-list">
           <div className="product-widget">
             <div className="product-img">
-              <img src="./img/product01.png" alt="Product 1" />
+              <img src={product1} alt="Product 1" />
             </div>
             <div className="product-body">
               <h3 className="product-name"><a href="#">product name goes here</a></h3>
               <h4 className="product-price"><span className="qty">1x</span>$980.00</h4>
             </div>
-            <button className="delete"><i className="fa fa-close"></i></button>
+            <button className="delete"><i><RxCross2/></i></button>
           </div>
 
           <div className="product-widget">
             <div className="product-img">
-              <img src="./img/product02.png" alt="Product 2" />
+              <img src={product2} alt="Product 2" />
             </div>
             <div className="product-body">
               <h3 className="product-name"><a href="#">product name goes here</a></h3>
               <h4 className="product-price"><span className="qty">3x</span>$980.00</h4>
             </div>
-            <button className="delete"><i className="fa fa-close"></i></button>
+            <button className="delete"><i><RxCross2/></i></button>
           </div>
         </div>
 

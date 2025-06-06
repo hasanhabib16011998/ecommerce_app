@@ -23,13 +23,13 @@ const Header: React.FC = () => {
     <div className="container">
         <div className="row justify-content-between align-items-center">
         <ul className="header-links col-md-7 d-flex flex-wrap">
-            <li><a href="#"><FaPhoneAlt /> +021-95-51-84</a></li>
-            <li><a href="#"><MdOutlineEmail /> email@email.com</a></li>
-            <li><a href="#"><FaMapMarkerAlt /> 1734 Stonecoal Road</a></li>
+            <li><a href="#"><i><FaPhoneAlt /></i> +021-95-51-84</a></li>
+            <li><a href="#"><i><MdOutlineEmail /></i> email@email.com</a></li>
+            <li><a href="#"><i><FaMapMarkerAlt /></i> 1734 Stonecoal Road</a></li>
         </ul>
         <ul className="header-links col-md-5 d-flex justify-content-end flex-wrap">
-            <li><a href="#"><FaDollarSign /> USD</a></li>
-            <li><a href="#"><FaUserAlt /> My Account</a></li>
+            <li><a href="#"><i><FaDollarSign /></i> USD</a></li>
+            <li><a href="#"><i><FaUserAlt /></i> My Account</a></li>
         </ul>
         </div>
     </div>
