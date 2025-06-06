@@ -7,16 +7,14 @@ import { FaDollarSign } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { FaOpencart } from "react-icons/fa";
+import CartDropdown from './CartDropdown';
 
 
 
 
-function Header() {
-    const [cartOpen, setCartOpen] = useState(false);
-
-    const toggleCart = () => {
-      setCartOpen(prev => !prev);
-    };
+const Header: React.FC = () => {
+    const [cartOpen, setCartOpen] = useState<boolean>(false);
+    const toggleCart = (): void => setCartOpen(prev => !prev);
 
   return (
     <>
@@ -72,54 +70,14 @@ function Header() {
                 {/* Wishlist */}
                 <div>
                   <a href="#">
-                    <FaRegHeart/>
+                    <i><FaRegHeart/></i>
                     <span>Your Wishlist</span>
                     <div className="qty">2</div>
                   </a>
                 </div>
 
-                {/* Cart */}
-                <div className={`dropdown ${cartOpen ? 'open' : ''}`}>
-                    <a className="dropdown-toggle" onClick={toggleCart}>
-                      <FaOpencart />
-                      <span>Your Cart</span>
-                      <div className="qty">3</div>
-                    </a>
-                    <div className="cart-dropdown">
-                      <div className="cart-list">
-                        {/* sample cart items */}
-                        <div className="product-widget">
-                          <div className="product-img">
-                            <img src="./img/product01.png" alt="" />
-                          </div>
-                          <div className="product-body">
-                            <h3 className="product-name"><a href="#">product name goes here</a></h3>
-                            <h4 className="product-price"><span className="qty">1x</span>$980.00</h4>
-                          </div>
-                          <button className="delete"><i className="fa fa-close"></i></button>
-                        </div>
-
-                        <div className="product-widget">
-                          <div className="product-img">
-                            <img src="./img/product02.png" alt="" />
-                          </div>
-                          <div className="product-body">
-                            <h3 className="product-name"><a href="#">product name goes here</a></h3>
-                            <h4 className="product-price"><span className="qty">3x</span>$980.00</h4>
-                          </div>
-                          <button className="delete"><i className="fa fa-close"></i></button>
-                        </div>
-                      </div>
-                      <div className="cart-summary">
-                        <small>3 Item(s) selected</small>
-                        <h5>SUBTOTAL: $2940.00</h5>
-                      </div>
-                      <div className="cart-btns">
-                        <a href="#">View Cart</a>
-                        <a href="#">Checkout  <i className="fa fa-arrow-circle-right"></i></a>
-                      </div>
-                    </div>
-                  </div>
+                {/* Cart Dropdown */}
+                <CartDropdown isOpen={cartOpen} toggleCart={toggleCart} />
 
                 {/* Menu Toggle */}
                 <div className="menu-toggle">
@@ -136,7 +94,8 @@ function Header() {
       </div>
       </header>
     </>
-  );
+   )
+  
 }
 
 export default Header;
