@@ -1,1 +1,1 @@
-this is a demo application for a react django exommerce application.
+this is a demo application for a react django ecommerce application.

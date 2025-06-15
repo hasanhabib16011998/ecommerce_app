@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/header/Header';
 import ShopSection from './components/ShopSection';
+import NewProducts from './components/NewProducts';
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
     <>
     <Header/>
     <ShopSection/>
+    <NewProducts/>
     </>
   )
 }
