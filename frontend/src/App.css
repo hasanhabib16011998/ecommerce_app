@@ -702,9 +702,7 @@ textarea.input {
   .main-nav>li {
     display: block;
     float: none;
-  }
-  .main-nav>li+li {
-    margin-left: 0px;
+    margin-left: 20px;
   }
   .main-nav>li>a {
     padding: 15px;
