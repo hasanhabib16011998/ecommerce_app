@@ -6,7 +6,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaDollarSign } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
-import { FaOpencart } from "react-icons/fa";
+import { MdMenu } from "react-icons/md";
 import CartDropdown from './CartDropdown';
 
 
@@ -15,6 +15,12 @@ import CartDropdown from './CartDropdown';
 const Header: React.FC = () => {
     const [cartOpen, setCartOpen] = useState<boolean>(false);
     const toggleCart = (): void => setCartOpen(prev => !prev);
+    const [navActive, setNavActive] = useState(false);
+
+    const handleToggle = (e: React.MouseEvent) => {
+      e.preventDefault();
+      setNavActive((prev) => !prev);
+    };
 
   return (
     <>
@@ -81,8 +87,8 @@ const Header: React.FC = () => {
 
                 {/* Menu Toggle */}
                 <div className="menu-toggle">
-                  <a href="#">
-                    <i className="fa fa-bars"></i>
+                  <a href="#" onClick={handleToggle}>
+                    <i><MdMenu/></i>
                     <span>Menu</span>
                   </a>
                 </div>
@@ -93,6 +99,25 @@ const Header: React.FC = () => {
         </div>
       </div>
       </header>
+
+
+      <nav id="navigation">
+      <div className="container">
+        <div id="responsive-nav" className={navActive ? "active" : ""}>
+          <ul className="main-nav nav navbar-nav">
+            <li className="active"><a href="#">Home</a></li>
+            <li><a href="#">Hot Deals</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Laptops</a></li>
+            <li><a href="#">Smartphones</a></li>
+            <li><a href="#">Cameras</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
     </>
    )
   
